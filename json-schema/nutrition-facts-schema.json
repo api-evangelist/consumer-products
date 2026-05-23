@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-schema/nutrition-facts-schema.json",
+  "title": "NutritionFacts",
+  "description": "Nutrition facts panel data for a consumer food or beverage product, aligned with US FDA Nutrition Facts and Open Food Facts conventions.",
+  "type": "object",
+  "properties": {
+    "servingSize": {
+      "type": "object",
+      "description": "Manufacturer-declared serving size.",
+      "properties": {
+        "value": { "type": "number", "example": 30 },
+        "unit": { "type": "string", "example": "g" },
+        "description": {
+          "type": "string",
+          "description": "Free-text serving description (e.g. '2 tbsp (30 g)').",
+          "example": "2 tbsp (30 g)"
+        }
+      },
+      "required": ["value", "unit"]
+    },
+    "servingsPerContainer": {
+      "type": "number",
+      "description": "Servings per container as printed on the panel.",
+      "example": 8
+    },
+    "energyKcal": {
+      "type": "number",
+      "description": "Calories per serving (kcal).",
+      "example": 150
+    },
+    "energyKj": {
+      "type": "number",
+      "description": "Energy per serving in kilojoules.",
+      "example": 628
+    },
+    "totalFatG": {
+      "type": "number",
+      "description": "Total fat per serving in grams.",
+      "example": 8
+    },
+    "saturatedFatG": {
+      "type": "number",
+      "description": "Saturated fat per serving in grams.",
+      "example": 1.5
+    },
+    "transFatG": {
+      "type": "number",
+      "description": "Trans fat per serving in grams.",
+      "example": 0
+    },
+    "cholesterolMg": {
+      "type": "number",
+      "description": "Cholesterol per serving in milligrams.",
+      "example": 0
+    },
+    "sodiumMg": {
+      "type": "number",
+      "description": "Sodium per serving in milligrams.",
+      "example": 95
+    },
+    "totalCarbohydrateG": {
+      "type": "number",
+      "description": "Total carbohydrate per serving in grams.",
+      "example": 16
+    },
+    "dietaryFiberG": {
+      "type": "number",
+      "description": "Dietary fiber per serving in grams.",
+      "example": 1
+    },
+    "totalSugarsG": {
+      "type": "number",
+      "description": "Total sugars per serving in grams.",
+      "example": 2
+    },
+    "addedSugarsG": {
+      "type": "number",
+      "description": "Added sugars per serving in grams.",
+      "example": 1
+    },
+    "proteinG": {
+      "type": "number",
+      "description": "Protein per serving in grams.",
+      "example": 2
+    },
+    "nutriScore": {
+      "type": "string",
+      "description": "Nutri-Score nutritional grade.",
+      "enum": ["A", "B", "C", "D", "E"],
+      "example": "B"
+    },
+    "novaGroup": {
+      "type": "integer",
+      "description": "NOVA classification of food processing level (1 = unprocessed, 4 = ultra-processed).",
+      "enum": [1, 2, 3, 4],
+      "example": 3
+    }
+  },
+  "required": ["servingSize", "energyKcal"]
+}

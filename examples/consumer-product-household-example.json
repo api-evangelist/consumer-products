@@ -1,0 +1,56 @@
+{
+  "gtin": "00037000932260",
+  "sku": "PG-TIDE-PODS-ORIG-42CT",
+  "name": "Tide Pods Original Laundry Detergent, 42 Count",
+  "brand": "Tide",
+  "manufacturer": "Procter & Gamble",
+  "category": "Laundry Care / Unit Dose Detergents",
+  "gpcBrickCode": "10000196",
+  "description": "3-in-1 laundry pacs with detergent, stain remover, and brightener for HE and standard machines.",
+  "image": "https://cdn.example.com/products/tide-pods-42ct.jpg",
+  "netContent": {
+    "value": 42,
+    "unit": "count"
+  },
+  "countryOfOrigin": "US",
+  "language": "en-US",
+  "targetMarket": ["US", "CA"],
+  "lifecycleStatus": "Active",
+  "identifiers": [
+    {
+      "type": "GTIN",
+      "value": "00037000932260",
+      "issuingAuthority": "GS1 US",
+      "primary": true
+    },
+    {
+      "type": "UPC",
+      "value": "037000932260",
+      "issuingAuthority": "GS1 US",
+      "primary": false
+    },
+    {
+      "type": "MPN",
+      "value": "93226",
+      "issuingAuthority": "Procter & Gamble",
+      "primary": false
+    }
+  ],
+  "ingredients": "Alcoholethoxy Sulfate, Alcoholethoxylate, Polyethyleneimine Ethoxylate, Propylene Glycol, Glycerine, Disodium Distyrylbiphenyl Disulfonate, Enzymes, Mannanase Enzyme, Sodium Borate, Citric Acid, Hydrogenated Castor Oil, Ethanolamine, Sodium Diethylenetriamine Pentaacetate, Calcium Formate, Fragrance, Liquitint Blue.",
+  "allergens": [],
+  "labels": ["EPA Safer Choice", "Keep Out Of Reach Of Children"],
+  "packaging": {
+    "material": "HDPE Tub With Child-Resistant Closure",
+    "recyclable": true,
+    "weight": {
+      "value": 140,
+      "unit": "g"
+    }
+  },
+  "price": {
+    "amount": 19.99,
+    "currency": "USD"
+  },
+  "digitalLinkUrl": "https://id.gs1.org/01/00037000932260",
+  "modified": "2026-05-23T10:00:00Z"
+}

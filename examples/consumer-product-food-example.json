@@ -1,0 +1,71 @@
+{
+  "gtin": "00028400090452",
+  "sku": "PEP-LAYS-CLASSIC-225G",
+  "name": "Lay's Classic Potato Chips, 225 g",
+  "brand": "Lay's",
+  "manufacturer": "PepsiCo (Frito-Lay)",
+  "category": "Salty Snacks / Potato Chips",
+  "gpcBrickCode": "10000220",
+  "description": "Classic salted potato chips made from potatoes, vegetable oil, and salt.",
+  "image": "https://cdn.example.com/products/lays-classic-225g.jpg",
+  "netContent": {
+    "value": 225,
+    "unit": "g"
+  },
+  "countryOfOrigin": "US",
+  "language": "en-US",
+  "targetMarket": ["US", "CA"],
+  "lifecycleStatus": "Active",
+  "identifiers": [
+    {
+      "type": "GTIN",
+      "value": "00028400090452",
+      "issuingAuthority": "GS1 US",
+      "primary": true
+    },
+    {
+      "type": "UPC",
+      "value": "028400090452",
+      "issuingAuthority": "GS1 US",
+      "primary": false
+    }
+  ],
+  "ingredients": "Potatoes, Vegetable Oil (Sunflower, Corn, and/or Canola Oil), Salt.",
+  "allergens": [],
+  "labels": ["Gluten Free"],
+  "nutrition": {
+    "servingSize": {
+      "value": 28,
+      "unit": "g",
+      "description": "About 15 chips (28 g)"
+    },
+    "servingsPerContainer": 8,
+    "energyKcal": 160,
+    "totalFatG": 10,
+    "saturatedFatG": 1.5,
+    "transFatG": 0,
+    "cholesterolMg": 0,
+    "sodiumMg": 170,
+    "totalCarbohydrateG": 15,
+    "dietaryFiberG": 1,
+    "totalSugarsG": 0,
+    "addedSugarsG": 0,
+    "proteinG": 2,
+    "nutriScore": "D",
+    "novaGroup": 4
+  },
+  "packaging": {
+    "material": "Metallized Polypropylene Film",
+    "recyclable": false,
+    "weight": {
+      "value": 8,
+      "unit": "g"
+    }
+  },
+  "price": {
+    "amount": 4.99,
+    "currency": "USD"
+  },
+  "digitalLinkUrl": "https://id.gs1.org/01/00028400090452",
+  "modified": "2026-05-23T10:00:00Z"
+}

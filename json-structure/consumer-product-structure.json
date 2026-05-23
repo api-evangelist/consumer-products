@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-structure/consumer-product-structure.json",
+  "name": "ConsumerProduct",
+  "description": "A consumer-facing product record aligned with schema.org/Product and GS1 product master data.",
+  "type": "object",
+  "properties": {
+    "gtin": {
+      "description": "GS1 Global Trade Item Number (8, 12, 13, or 14 digits).",
+      "pattern": "^[0-9]{8}$|^[0-9]{12}$|^[0-9]{13}$|^[0-9]{14}$",
+      "example": "00012345678905",
+      "type": "string"
+    },
+    "sku": {
+      "description": "Internal stock keeping unit assigned by the brand or retailer.",
+      "example": "PG-TIDE-PODS-42CT",
+      "type": "string"
+    },
+    "name": {
+      "description": "Product display name.",
+      "example": "Tide Pods Original Laundry Detergent, 42 Count",
+      "type": "string"
+    },
+    "brand": {
+      "description": "Consumer-facing brand name.",
+      "example": "Tide",
+      "type": "string"
+    },
+    "manufacturer": {
+      "description": "Legal manufacturer or marketer of the product.",
+      "example": "Procter & Gamble",
+      "type": "string"
+    },
+    "category": {
+      "description": "Product category, typically aligned with GS1 GPC or the retailer's taxonomy.",
+      "example": "Laundry Detergents",
+      "type": "string"
+    },
+    "gpcBrickCode": {
+      "description": "GS1 Global Product Classification brick code.",
+      "pattern": "^[0-9]{8}$",
+      "example": "10000196",
+      "type": "string"
+    },
+    "description": {
+      "description": "Marketing description for the digital shelf.",
+      "type": "string"
+    },
+    "image": {
+      "description": "Primary product image URL.",
+      "example": "https://cdn.example.com/products/tide-pods-42ct.jpg",
+      "type": "uri"
+    },
+    "netContent": {
+      "description": "Net contents of the product unit.",
+      "type": "object",
+      "properties": {
+        "value": { "type": "number", "example": 42 },
+        "unit": { "type": "string", "example": "count" }
+      },
+      "required": ["value", "unit"]
+    },
+    "countryOfOrigin": {
+      "description": "ISO 3166-1 alpha-2 country code where the product was made.",
+      "pattern": "^[A-Z]{2}$",
+      "example": "US",
+      "type": "string"
+    },
+    "language": {
+      "description": "BCP 47 language tag for the textual attributes on this record.",
+      "example": "en-US",
+      "type": "string"
+    },
+    "targetMarket": {
+      "description": "ISO 3166-1 alpha-2 country codes for markets where the product is sold.",
+      "example": ["US", "CA"],
+      "type": "array",
+      "items": {
+        "$schema": "https://json-structure.org/meta/core/v0/#",
+        "type": "string"
+      }
+    },
+    "lifecycleStatus": {
+      "description": "Current lifecycle stage of the product.",
+      "example": "Active",
+      "enum": ["PreLaunch", "Active", "Discontinued", "Recalled"],
+      "type": "string"
+    },
+    "ingredients": {
+      "description": "Ingredient declaration as printed on the package.",
+      "type": "string"
+    },
+    "allergens": {
+      "description": "Declared allergens (food or cosmetic).",
+      "example": ["milk", "soy"],
+      "type": "array",
+      "items": {
+        "$schema": "https://json-structure.org/meta/core/v0/#",
+        "type": "string"
+      }
+    },
+    "labels": {
+      "description": "Certifications and label claims.",
+      "example": ["USDA Organic", "Non-GMO Project Verified"],
+      "type": "array",
+      "items": {
+        "$schema": "https://json-structure.org/meta/core/v0/#",
+        "type": "string"
+      }
+    },
+    "price": {
+      "description": "Manufacturer suggested or current selling price.",
+      "type": "object",
+      "properties": {
+        "amount": { "type": "number", "example": 19.99 },
+        "currency": {
+          "pattern": "^[A-Z]{3}$",
+          "example": "USD",
+          "type": "string"
+        }
+      },
+      "required": ["amount", "currency"]
+    },
+    "digitalLinkUrl": {
+      "description": "GS1 Digital Link URI encoding the product's GTIN for omnichannel resolution.",
+      "example": "https://id.gs1.org/01/00012345678905",
+      "type": "uri"
+    },
+    "modified": {
+      "description": "Last modification timestamp for this product record.",
+      "type": "datetime"
+    }
+  },
+  "required": ["gtin", "name", "brand"]
+}

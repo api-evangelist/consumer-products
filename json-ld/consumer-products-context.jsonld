@@ -1,0 +1,142 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "gs1": "https://gs1.org/voc/",
+    "off": "https://world.openfoodfacts.org/data/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "ConsumerProduct": "schema:Product",
+    "ProductIdentifier": "gs1:Identifier",
+    "NutritionFacts": "schema:NutritionInformation",
+    "name": "schema:name",
+    "description": "schema:description",
+    "image": {
+      "@id": "schema:image",
+      "@type": "@id"
+    },
+    "brand": "schema:brand",
+    "manufacturer": "schema:manufacturer",
+    "category": "schema:category",
+    "sku": "schema:sku",
+    "gtin": "schema:gtin",
+    "gpcBrickCode": {
+      "@id": "gs1:gpcCategoryCode",
+      "@type": "xsd:string"
+    },
+    "countryOfOrigin": {
+      "@id": "schema:countryOfOrigin",
+      "@type": "xsd:string"
+    },
+    "language": {
+      "@id": "dcterms:language",
+      "@type": "xsd:string"
+    },
+    "targetMarket": {
+      "@id": "gs1:targetMarket",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "lifecycleStatus": {
+      "@id": "gs1:lifecycleStatus",
+      "@type": "xsd:string"
+    },
+    "identifiers": {
+      "@id": "gs1:additionalTradeItemIdentification",
+      "@container": "@set"
+    },
+    "type": {
+      "@id": "gs1:additionalTradeItemIdentificationType",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "schema:value",
+      "@type": "xsd:string"
+    },
+    "issuingAuthority": {
+      "@id": "gs1:issuingAuthority",
+      "@type": "xsd:string"
+    },
+    "primary": {
+      "@id": "gs1:isPrimary",
+      "@type": "xsd:boolean"
+    },
+    "ingredients": "schema:ingredients",
+    "allergens": {
+      "@id": "gs1:allergen",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "labels": {
+      "@id": "gs1:packagingMarkedLabelAccreditationCode",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "nutrition": "schema:nutrition",
+    "servingSize": "schema:servingSize",
+    "servingsPerContainer": {
+      "@id": "gs1:numberOfServingsPerPackage",
+      "@type": "xsd:decimal"
+    },
+    "energyKcal": "schema:calories",
+    "energyKj": {
+      "@id": "gs1:energyPerNutrientBasis",
+      "@type": "xsd:decimal"
+    },
+    "totalFatG": "schema:fatContent",
+    "saturatedFatG": "schema:saturatedFatContent",
+    "transFatG": "schema:transFatContent",
+    "cholesterolMg": "schema:cholesterolContent",
+    "sodiumMg": "schema:sodiumContent",
+    "totalCarbohydrateG": "schema:carbohydrateContent",
+    "dietaryFiberG": "schema:fiberContent",
+    "totalSugarsG": "schema:sugarContent",
+    "addedSugarsG": {
+      "@id": "off:added_sugars",
+      "@type": "xsd:decimal"
+    },
+    "proteinG": "schema:proteinContent",
+    "nutriScore": {
+      "@id": "off:nutriscore_grade",
+      "@type": "xsd:string"
+    },
+    "novaGroup": {
+      "@id": "off:nova_group",
+      "@type": "xsd:integer"
+    },
+    "packaging": {
+      "@id": "gs1:packagingType",
+      "@type": "xsd:string"
+    },
+    "material": {
+      "@id": "gs1:packagingMaterial",
+      "@type": "xsd:string"
+    },
+    "recyclable": {
+      "@id": "gs1:isPackagingMarkedAsRecyclable",
+      "@type": "xsd:boolean"
+    },
+    "weight": "schema:weight",
+    "unit": {
+      "@id": "schema:unitCode",
+      "@type": "xsd:string"
+    },
+    "netContent": {
+      "@id": "gs1:netContent"
+    },
+    "price": "schema:offers",
+    "amount": "schema:price",
+    "currency": {
+      "@id": "schema:priceCurrency",
+      "@type": "xsd:string"
+    },
+    "digitalLinkUrl": {
+      "@id": "gs1:digitalLink",
+      "@type": "@id"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:dateTime"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-structure/product-identifier-structure.json",
+  "name": "ProductIdentifier",
+  "description": "A typed identifier assigned to a consumer product by a registry, manufacturer, or marketplace.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "description": "Identifier scheme.",
+      "example": "GTIN",
+      "enum": ["GTIN", "UPC", "EAN", "ISBN", "GLN", "SSCC", "ASIN", "MPN", "SKU"],
+      "type": "string"
+    },
+    "value": {
+      "description": "The identifier value, formatted per its scheme.",
+      "example": "00012345678905",
+      "type": "string"
+    },
+    "issuingAuthority": {
+      "description": "Issuing organization or namespace.",
+      "example": "GS1 US",
+      "type": "string"
+    },
+    "primary": {
+      "description": "Whether this is the primary identifier for the product.",
+      "example": true,
+      "type": "boolean"
+    }
+  },
+  "required": ["type", "value"]
+}

@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-schema/consumer-product-schema.json",
+  "title": "ConsumerProduct",
+  "description": "A consumer-facing product record aligned with schema.org/Product and GS1 product master data, suitable for syndication across PIM platforms and retailer feeds.",
+  "type": "object",
+  "properties": {
+    "gtin": {
+      "type": "string",
+      "description": "GS1 Global Trade Item Number (8, 12, 13, or 14 digits) identifying the trade item.",
+      "pattern": "^[0-9]{8}$|^[0-9]{12}$|^[0-9]{13}$|^[0-9]{14}$",
+      "example": "00012345678905"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Internal stock keeping unit assigned by the brand or retailer.",
+      "example": "PG-TIDE-PODS-42CT"
+    },
+    "name": {
+      "type": "string",
+      "description": "Product display name.",
+      "example": "Tide Pods Original Laundry Detergent, 42 Count"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Consumer-facing brand name.",
+      "example": "Tide"
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "Legal manufacturer or marketer of the product.",
+      "example": "Procter & Gamble"
+    },
+    "category": {
+      "type": "string",
+      "description": "Product category, typically aligned with GS1 GPC or the retailer's taxonomy.",
+      "example": "Laundry Detergents"
+    },
+    "gpcBrickCode": {
+      "type": "string",
+      "description": "GS1 Global Product Classification brick code.",
+      "pattern": "^[0-9]{8}$",
+      "example": "10000196"
+    },
+    "description": {
+      "type": "string",
+      "description": "Marketing description for the digital shelf."
+    },
+    "image": {
+      "type": "string",
+      "format": "uri",
+      "description": "Primary product image URL.",
+      "example": "https://cdn.example.com/products/tide-pods-42ct.jpg"
+    },
+    "netContent": {
+      "type": "object",
+      "description": "Net contents of the product unit.",
+      "properties": {
+        "value": {
+          "type": "number",
+          "example": 42
+        },
+        "unit": {
+          "type": "string",
+          "description": "UN/ECE Recommendation 20 unit code or human-readable unit.",
+          "example": "count"
+        }
+      },
+      "required": ["value", "unit"]
+    },
+    "countryOfOrigin": {
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code where the product was made.",
+      "pattern": "^[A-Z]{2}$",
+      "example": "US"
+    },
+    "language": {
+      "type": "string",
+      "description": "BCP 47 language tag for the textual attributes on this record.",
+      "example": "en-US"
+    },
+    "targetMarket": {
+      "type": "array",
+      "description": "ISO 3166-1 alpha-2 country codes for markets where the product is sold.",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      },
+      "example": ["US", "CA"]
+    },
+    "lifecycleStatus": {
+      "type": "string",
+      "description": "Current lifecycle stage of the product.",
+      "enum": [
+        "PreLaunch",
+        "Active",
+        "Discontinued",
+        "Recalled"
+      ],
+      "example": "Active"
+    },
+    "identifiers": {
+      "type": "array",
+      "description": "Additional identifiers (UPC, EAN, ISBN, ASIN, manufacturer part number).",
+      "items": {
+        "$ref": "https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-schema/product-identifier-schema.json"
+      }
+    },
+    "nutrition": {
+      "description": "Nutrition facts panel when the product is a food or beverage.",
+      "$ref": "https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-schema/nutrition-facts-schema.json"
+    },
+    "ingredients": {
+      "type": "string",
+      "description": "Ingredient declaration as printed on the package."
+    },
+    "allergens": {
+      "type": "array",
+      "description": "Declared allergens (food or cosmetic).",
+      "items": {
+        "type": "string"
+      },
+      "example": ["milk", "soy"]
+    },
+    "labels": {
+      "type": "array",
+      "description": "Certifications and label claims (Organic, Fair Trade, Kosher, Halal, Vegan, etc.).",
+      "items": {
+        "type": "string"
+      },
+      "example": ["USDA Organic", "Non-GMO Project Verified"]
+    },
+    "packaging": {
+      "type": "object",
+      "description": "Packaging characteristics.",
+      "properties": {
+        "material": {
+          "type": "string",
+          "example": "Plastic (PET)"
+        },
+        "recyclable": {
+          "type": "boolean",
+          "example": true
+        },
+        "weight": {
+          "type": "object",
+          "properties": {
+            "value": { "type": "number" },
+            "unit": { "type": "string", "example": "g" }
+          }
+        }
+      }
+    },
+    "price": {
+      "type": "object",
+      "description": "Manufacturer suggested or current selling price.",
+      "properties": {
+        "amount": { "type": "number", "example": 19.99 },
+        "currency": {
+          "type": "string",
+          "description": "ISO 4217 currency code.",
+          "pattern": "^[A-Z]{3}$",
+          "example": "USD"
+        }
+      },
+      "required": ["amount", "currency"]
+    },
+    "digitalLinkUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "GS1 Digital Link URI encoding the product's GTIN for omnichannel resolution.",
+      "example": "https://id.gs1.org/01/00012345678905"
+    },
+    "modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification timestamp for this product record."
+    }
+  },
+  "required": ["gtin", "name", "brand"]
+}

@@ -1,0 +1,50 @@
+{
+  "gtin": "00011111119987",
+  "sku": "UL-DOVE-BEAUTY-BAR-4PK",
+  "name": "Dove Beauty Bar, White, 4 Bar Pack",
+  "brand": "Dove",
+  "manufacturer": "Unilever",
+  "category": "Bath And Shower / Bar Soap",
+  "gpcBrickCode": "10000509",
+  "description": "Moisturizing beauty bar with 1/4 moisturizing cream to nourish the skin.",
+  "image": "https://cdn.example.com/products/dove-beauty-bar-4pk.jpg",
+  "netContent": {
+    "value": 4,
+    "unit": "count"
+  },
+  "countryOfOrigin": "US",
+  "language": "en-US",
+  "targetMarket": ["US"],
+  "lifecycleStatus": "Active",
+  "identifiers": [
+    {
+      "type": "GTIN",
+      "value": "00011111119987",
+      "issuingAuthority": "GS1 US",
+      "primary": true
+    },
+    {
+      "type": "ASIN",
+      "value": "B00AC0AVZA",
+      "issuingAuthority": "Amazon",
+      "primary": false
+    }
+  ],
+  "ingredients": "Sodium Lauroyl Isethionate, Stearic Acid, Sodium Tallowate or Sodium Palmitate, Lauric Acid, Sodium Isethionate, Water, Sodium Stearate, Cocamidopropyl Betaine, Sodium Cocoate or Sodium Palm Kernelate, Fragrance, Sodium Chloride, Tetrasodium EDTA, Tetrasodium Etidronate, Titanium Dioxide.",
+  "allergens": ["fragrance"],
+  "labels": ["Dermatologist Recommended", "Cruelty Free (PETA)"],
+  "packaging": {
+    "material": "Paperboard Carton",
+    "recyclable": true,
+    "weight": {
+      "value": 45,
+      "unit": "g"
+    }
+  },
+  "price": {
+    "amount": 6.49,
+    "currency": "USD"
+  },
+  "digitalLinkUrl": "https://id.gs1.org/01/00011111119987",
+  "modified": "2026-05-23T10:00:00Z"
+}

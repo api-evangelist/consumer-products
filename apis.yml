@@ -1,0 +1,597 @@
+aid: consumer-products
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/apis.yml
+name: Consumer Products
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Consumer Products
+  - CPG
+  - Product Data
+  - Retail
+  - GTIN
+  - Barcode
+  - Product Catalog
+  - PIM
+  - Syndication
+  - Schema.org Product
+description: >-
+  Industry-vertical index of APIs, data sources, syndication networks, and
+  product information management (PIM) platforms that power the consumer
+  packaged goods (CPG) and consumer products ecosystem. Catalogs corporate
+  developer surfaces from large CPG manufacturers (P&G, Unilever, Nestle,
+  Coca-Cola, PepsiCo, Mondelez, Kimberly-Clark, Colgate-Palmolive),
+  product-identifier registries (GS1 Digital Link, GTIN/UPC lookup),
+  open product databases (Open Food Facts, Open Beauty Facts),
+  commercial syndication networks (Salsify, Syndigo, 1WorldSync), and
+  PIM platforms (Akeneo, Pimcore, Plytix, Sales Layer).
+created: '2025-01-01'
+modified: '2026-05-23'
+specificationVersion: '0.19'
+apis:
+  - name: GS1 Digital Link
+    description: >-
+      GS1 Digital Link is the global standard that turns GS1 identifiers
+      (GTINs, SSCCs, GLNs) into web URIs so a single barcode or QR code can
+      connect to multiple sources of brand, regulatory, supply chain, and
+      consumer information. It is the cornerstone identification standard for
+      consumer products and underpins GS1 2D Sunrise 2027.
+    humanURL: https://www.gs1.org/standards/gs1-digital-link
+    baseURL: https://ref.gs1.org/standards/digital-link/
+    tags:
+      - GS1
+      - Digital Link
+      - GTIN
+      - 2D Barcode
+      - Identification
+    properties:
+      - type: Documentation
+        url: https://www.gs1.org/standards/gs1-digital-link
+      - type: Specification
+        url: https://ref.gs1.org/standards/digital-link/uri-syntax/
+        title: GS1 Digital Link URI Syntax 1.4
+      - type: Specification
+        url: https://ref.gs1.org/standards/resolver/
+        title: GS1 Digital Link Resolver Standard 1.3
+      - type: GitHubRepository
+        url: https://github.com/gs1/GS1DigitalLinkToolkit.js
+        title: GS1 Digital Link Toolkit (JavaScript)
+      - type: GitHubRepository
+        url: https://github.com/gs1/GS1_DigitalLink_Resolver_CE
+        title: GS1 Digital Link Resolver Community Edition
+  - name: Open Food Facts
+    description: >-
+      Open Food Facts is a collaborative, free, open database of food products
+      from around the world maintained by a global community of contributors.
+      Its REST API exposes ingredients, nutrition facts, additives, allergens,
+      Nutri-Score, NOVA group, packaging, and labels for over three million
+      products keyed by barcode (GTIN/EAN/UPC).
+    humanURL: https://world.openfoodfacts.org/
+    baseURL: https://world.openfoodfacts.org/api/v2/
+    tags:
+      - Open Data
+      - Food
+      - Nutrition
+      - Ingredients
+      - Barcode
+    properties:
+      - type: Documentation
+        url: https://openfoodfacts.github.io/openfoodfacts-server/api/
+      - type: OpenAPI
+        url: https://openfoodfacts.github.io/openfoodfacts-server/api/ref-v2/
+        title: Open Food Facts API v2 Reference
+      - type: GitHubOrganization
+        url: https://github.com/openfoodfacts
+      - type: SDK
+        url: https://github.com/openfoodfacts/openfoodfacts-python
+        title: openfoodfacts-python
+      - type: SDK
+        url: https://github.com/openfoodfacts/openfoodfacts-nodejs
+        title: openfoodfacts-nodejs
+      - type: License
+        url: https://opendatacommons.org/licenses/odbl/1-0/
+        title: Open Database License (ODbL)
+  - name: Open Beauty Facts
+    description: >-
+      Open Beauty Facts is the Open Food Facts sister project covering cosmetics
+      and personal care products. The same REST shape exposes ingredients
+      (INCI), labels, packaging, and brand metadata for beauty products
+      contributed by a global community and keyed by barcode.
+    humanURL: https://world.openbeautyfacts.org/
+    baseURL: https://world.openbeautyfacts.org/api/v2/
+    tags:
+      - Open Data
+      - Beauty
+      - Cosmetics
+      - INCI
+      - Barcode
+    properties:
+      - type: Documentation
+        url: https://wiki.openfoodfacts.org/API
+      - type: GitHubRepository
+        url: https://github.com/openfoodfacts/openfoodfacts-server
+        title: Shared platform powering Open Beauty Facts
+      - type: License
+        url: https://opendatacommons.org/licenses/odbl/1-0/
+        title: Open Database License (ODbL)
+  - name: Procter & Gamble (P&G) Brands
+    description: >-
+      Procter & Gamble is the world's largest CPG company by revenue, operating
+      ten product categories across Beauty, Grooming, Health Care, Fabric &
+      Home Care, and Baby, Feminine & Family Care. P&G does not publish a
+      public consumer-facing developer portal; integrations are restricted to
+      retail trading partners, EDI/GS1 networks, and the P&G Direct
+      direct-to-consumer commerce stack.
+    humanURL: https://us.pg.com/brands/
+    baseURL: https://us.pg.com/
+    tags:
+      - CPG
+      - Beauty
+      - Grooming
+      - Health Care
+      - Home Care
+      - Baby Care
+    properties:
+      - type: Website
+        url: https://us.pg.com/
+      - type: BrandPortfolio
+        url: https://us.pg.com/brands/
+      - type: GitHubOrganization
+        url: https://github.com/procter-and-gamble
+  - name: Unilever Brands
+    description: >-
+      Unilever is a multinational CPG company with more than 400 brands across
+      Beauty & Wellbeing, Personal Care, Home Care, Nutrition, and Ice Cream.
+      Public APIs are not consolidated under a single developer portal;
+      integrations run through retailer data syndication networks and brand-
+      specific e-commerce platforms (e.g. Hellmann's, Dove, Magnum, Knorr).
+    humanURL: https://www.unilever.com/brands/
+    baseURL: https://www.unilever.com/
+    tags:
+      - CPG
+      - Beauty
+      - Personal Care
+      - Home Care
+      - Food
+      - Ice Cream
+    properties:
+      - type: Website
+        url: https://www.unilever.com/
+      - type: BrandPortfolio
+        url: https://www.unilever.com/brands/
+      - type: GitHubOrganization
+        url: https://github.com/unilever
+  - name: Nestle Brands
+    description: >-
+      Nestle is the world's largest food and beverage company with more than
+      2,000 brands across Beverages, Dairy, Confectionery, Nutrition, Pet Care,
+      and Prepared Dishes. Like other large CPGs, Nestle has no public unified
+      developer portal; product information flows through retailer syndication
+      networks (1WorldSync, Salsify), GS1 GDSN, and brand-level commerce APIs
+      such as Nestle Professional and Purina e-commerce.
+    humanURL: https://www.nestle.com/brands
+    baseURL: https://www.nestle.com/
+    tags:
+      - CPG
+      - Food
+      - Beverages
+      - Dairy
+      - Confectionery
+      - Pet Care
+    properties:
+      - type: Website
+        url: https://www.nestle.com/
+      - type: BrandPortfolio
+        url: https://www.nestle.com/brands
+      - type: GitHubOrganization
+        url: https://github.com/Nestle
+  - name: The Coca-Cola Company
+    description: >-
+      The Coca-Cola Company manufactures more than 200 brands across sparkling
+      soft drinks, water, sports drinks, juice, tea, coffee, and plant-based
+      beverages. Public developer surfaces are limited to the Coca-Cola Freestyle
+      dispenser ecosystem, the My Coke Rewards / Sip & Scan loyalty mechanics,
+      and the Coca-Cola Vending API. Product master data is distributed via
+      GS1 GDSN and Syndigo to North American retailers.
+    humanURL: https://www.coca-colacompany.com/brands
+    baseURL: https://www.coca-colacompany.com/
+    tags:
+      - CPG
+      - Beverages
+      - Soft Drinks
+      - Loyalty
+      - Vending
+    properties:
+      - type: Website
+        url: https://www.coca-colacompany.com/
+      - type: BrandPortfolio
+        url: https://www.coca-colacompany.com/brands
+      - type: GitHubOrganization
+        url: https://github.com/Coca-Cola
+  - name: PepsiCo Brands
+    description: >-
+      PepsiCo operates a portfolio of 22 billion-dollar brands spanning Beverages
+      (Pepsi, Gatorade, Tropicana, Lipton, Bubly) and Convenient Foods (Lay's,
+      Doritos, Cheetos, Quaker, SodaStream). Developer integration occurs through
+      PepsiCo Partners (retailer EDI), the Sodastream connected dispenser
+      ecosystem, and PepsiCo Labs initiatives. There is no consolidated public
+      API portal.
+    humanURL: https://www.pepsico.com/brands
+    baseURL: https://www.pepsico.com/
+    tags:
+      - CPG
+      - Beverages
+      - Snacks
+      - SodaStream
+      - Connected Devices
+    properties:
+      - type: Website
+        url: https://www.pepsico.com/
+      - type: BrandPortfolio
+        url: https://www.pepsico.com/brands
+      - type: GitHubOrganization
+        url: https://github.com/pepsico-ecommerce
+  - name: Mondelez International
+    description: >-
+      Mondelez International is the global snacks leader with billion-dollar
+      brands including Oreo, Cadbury, Milka, Toblerone, Ritz, Trident, and
+      Halls. Public-facing developer assets are limited; retail master data
+      flows through 1WorldSync and GS1 GDSN, and direct-to-consumer brand
+      experiences (e.g. SnackWorks recipe API for the US baking brands) are
+      brand-specific rather than portfolio-wide.
+    humanURL: https://www.mondelezinternational.com/snack-brands
+    baseURL: https://www.mondelezinternational.com/
+    tags:
+      - CPG
+      - Snacks
+      - Confectionery
+      - Biscuits
+      - Gum
+    properties:
+      - type: Website
+        url: https://www.mondelezinternational.com/
+      - type: BrandPortfolio
+        url: https://www.mondelezinternational.com/snack-brands
+  - name: Kimberly-Clark Brands
+    description: >-
+      Kimberly-Clark is a personal-care CPG making essentials in Family Care,
+      Personal Care, and K-C Professional. Brands include Huggies, Kleenex,
+      Scott, Cottonelle, Kotex, Depend, and Poise. Like its CPG peers,
+      Kimberly-Clark does not publish a general developer portal; B2B and
+      retail integrations rely on GS1 / GDSN data syndication and EDI.
+    humanURL: https://www.kimberly-clark.com/en-us/brands
+    baseURL: https://www.kimberly-clark.com/
+    tags:
+      - CPG
+      - Personal Care
+      - Family Care
+      - Hygiene
+    properties:
+      - type: Website
+        url: https://www.kimberly-clark.com/
+      - type: BrandPortfolio
+        url: https://www.kimberly-clark.com/en-us/brands
+      - type: GitHubOrganization
+        url: https://github.com/KimberlyClark
+  - name: Colgate-Palmolive Brands
+    description: >-
+      Colgate-Palmolive is a global CPG focused on Oral Care, Personal Care,
+      Home Care, and Pet Nutrition (Hill's). Lead brands include Colgate, Tom's
+      of Maine, Palmolive, Speed Stick, Softsoap, Ajax, Murphy Oil Soap, and
+      Hill's Science Diet / Prescription Diet. Public API surfaces are limited
+      to the Hill's Pet Nutrition product locator and brand commerce stacks;
+      master data flows through GS1 GDSN to retailers.
+    humanURL: https://www.colgatepalmolive.com/en-us/brands
+    baseURL: https://www.colgatepalmolive.com/
+    tags:
+      - CPG
+      - Oral Care
+      - Personal Care
+      - Home Care
+      - Pet Nutrition
+    properties:
+      - type: Website
+        url: https://www.colgatepalmolive.com/
+      - type: BrandPortfolio
+        url: https://www.colgatepalmolive.com/en-us/brands
+  - name: Salsify Product Experience Cloud
+    description: >-
+      Salsify is a Product Experience Management (PXM) platform that combines
+      PIM, digital asset management, syndication, and digital shelf analytics.
+      Salsify's REST APIs let brands centralize product content and syndicate
+      it to thousands of retail destinations, marketplaces, and direct channels
+      with channel-specific transformations and validation.
+    humanURL: https://developers.salsify.com/
+    baseURL: https://app.salsify.com/api/
+    tags:
+      - PXM
+      - PIM
+      - Syndication
+      - Digital Shelf
+      - DAM
+    properties:
+      - type: Documentation
+        url: https://developers.salsify.com/
+      - type: Documentation
+        url: https://developers.salsify.com/reference/getting-started-with-the-api
+        title: Salsify Getting Started With The API
+      - type: GitHubOrganization
+        url: https://github.com/salsify
+  - name: Syndigo Content Experience Hub
+    description: >-
+      Syndigo is a Master Data Management (MDM), PIM, and content syndication
+      network that distributes product, location, and digital asset data to
+      retailers and recipients across grocery, hardlines, foodservice, and
+      healthcare. Syndigo APIs cover product content publishing, validation
+      against retailer requirements, and digital asset delivery.
+    humanURL: https://www.syndigo.com/
+    baseURL: https://api.syndigo.com/
+    tags:
+      - MDM
+      - PIM
+      - Syndication
+      - Content Experience
+      - Retail
+    properties:
+      - type: Website
+        url: https://www.syndigo.com/
+      - type: Documentation
+        url: https://www.syndigo.com/platform/
+        title: Syndigo Active Content Engine
+  - name: 1WorldSync GDSN
+    description: >-
+      1WorldSync is the largest GS1-certified Global Data Synchronization
+      Network (GDSN) data pool, operating the Content1 platform for product
+      content management and syndication. Brands publish master data once and
+      synchronize it with subscribing retailers worldwide using GS1 standards
+      (GTIN, GLN, GPC, GDSN messages).
+    humanURL: https://www.1worldsync.com/
+    baseURL: https://api.1worldsync.com/
+    tags:
+      - GDSN
+      - GS1
+      - Syndication
+      - Master Data
+      - Retail
+    properties:
+      - type: Website
+        url: https://www.1worldsync.com/
+      - type: Documentation
+        url: https://www.1worldsync.com/solutions/product-content-management/
+        title: 1WorldSync Content1 Platform
+      - type: Documentation
+        url: https://www.1worldsync.com/solutions/data-quality/
+        title: 1WorldSync Data Quality
+  - name: Akeneo Product Cloud
+    description: >-
+      Akeneo is an open-source-rooted Product Information Management (PIM)
+      platform. Its REST API exposes products, product models, families,
+      attributes, categories, channels, locales, reference entities, and
+      assets, enabling integration with e-commerce platforms, ERPs, syndication
+      partners, and DAM systems.
+    humanURL: https://api.akeneo.com/
+    baseURL: https://your-instance.cloud.akeneo.com/api/rest/v1/
+    tags:
+      - PIM
+      - Open Source
+      - Product Cloud
+      - Catalog
+    properties:
+      - type: Documentation
+        url: https://api.akeneo.com/
+      - type: Documentation
+        url: https://api.akeneo.com/api-reference.html
+        title: Akeneo REST API Reference
+      - type: GitHubOrganization
+        url: https://github.com/akeneo
+      - type: GitHubRepository
+        url: https://github.com/akeneo/pim-community-dev
+        title: Akeneo PIM Community Edition
+  - name: Pimcore Platform
+    description: >-
+      Pimcore is an open-source Digital Experience Platform combining PIM, MDM,
+      DAM, CDP, and DXP capabilities. Pimcore exposes both REST and GraphQL
+      APIs (the Datahub) for product data, classification stores, object
+      bricks, assets, documents, and customer data, with a strong focus on
+      flexible data modeling.
+    humanURL: https://pimcore.com/
+    baseURL: https://your-instance/pimcore/
+    tags:
+      - PIM
+      - DAM
+      - DXP
+      - GraphQL
+      - Open Source
+    properties:
+      - type: Documentation
+        url: https://pimcore.com/docs/platform/Platform/
+      - type: Documentation
+        url: https://pimcore.com/docs/platform/Datahub/
+        title: Pimcore Datahub GraphQL & REST
+      - type: GitHubOrganization
+        url: https://github.com/pimcore
+      - type: GitHubRepository
+        url: https://github.com/pimcore/pimcore
+        title: Pimcore Platform Repository
+  - name: Plytix PIM
+    description: >-
+      Plytix is a SaaS Product Information Management platform aimed at
+      mid-market brands, with channel syndication, brand portals, and a public
+      REST API for products, variants, attributes, categories, assets, and
+      relationships, used to feed marketplaces (Amazon, Walmart) and
+      e-commerce stacks.
+    humanURL: https://help.plytix.com/en/api
+    baseURL: https://pim.plytix.com/api/v1.1.0/
+    tags:
+      - PIM
+      - SaaS
+      - Mid-Market
+      - Syndication
+    properties:
+      - type: Documentation
+        url: https://help.plytix.com/en/api
+      - type: Documentation
+        url: https://docs.plytix.com/
+        title: Plytix API Documentation
+  - name: Sales Layer PIM
+    description: >-
+      Sales Layer is a cloud PIM platform with REST API access to product
+      catalogs, attribute schemas, categories, media, related products, and
+      syndication channels. It connects brands and retailers across marketplaces,
+      e-commerce platforms, and printed catalog workflows.
+    humanURL: https://docs.saleslayer.com/
+    baseURL: https://api.saleslayer.com/
+    tags:
+      - PIM
+      - SaaS
+      - Cloud
+      - Catalog
+    properties:
+      - type: Documentation
+        url: https://docs.saleslayer.com/
+      - type: Documentation
+        url: https://docs.saleslayer.com/api/api-introduction
+        title: Sales Layer API Reference
+common:
+  - type: Website
+    url: https://github.com/api-evangelist/consumer-products
+  - type: GitHubOrganization
+    url: https://github.com/api-evangelist
+  - type: Standards
+    url: https://www.gs1.org/standards
+    title: GS1 Standards (GTIN, GLN, GDSN, Digital Link, GPC)
+  - type: Standards
+    url: https://schema.org/Product
+    title: schema.org/Product Vocabulary
+  - type: OpenData
+    url: https://world.openfoodfacts.org/data
+    title: Open Food Facts Data Dumps
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-schema/consumer-product-schema.json
+    title: Consumer Product Schema
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-schema/product-identifier-schema.json
+    title: Product Identifier Schema
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-schema/nutrition-facts-schema.json
+    title: Nutrition Facts Schema
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-structure/consumer-product-structure.json
+    title: Consumer Product Structure
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-structure/product-identifier-structure.json
+    title: Product Identifier Structure
+  - type: JSONStructure
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-structure/nutrition-facts-structure.json
+    title: Nutrition Facts Structure
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/json-ld/consumer-products-context.jsonld
+    title: Consumer Products JSON-LD Context
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/vocabulary/consumer-products-vocabulary.yml
+    title: Consumer Products Vocabulary
+  - type: Example
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/examples/consumer-product-food-example.json
+    title: Consumer Product (Food) Example
+  - type: Example
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/examples/consumer-product-beauty-example.json
+    title: Consumer Product (Beauty) Example
+  - type: Example
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/examples/consumer-product-household-example.json
+    title: Consumer Product (Household) Example
+  - type: Features
+    data:
+      - name: Global Product Identification
+        description: >-
+          GS1-issued GTIN, UPC, EAN, and ISBN identifiers, increasingly carried
+          in GS1 Digital Link URIs and 2D barcodes for omnichannel resolution.
+      - name: Master Data Syndication
+        description: >-
+          Centralized publishing of product master data through GDSN data pools
+          (1WorldSync, Syndigo) so retailers receive consistent, validated
+          attributes across regions.
+      - name: Product Information Management
+        description: >-
+          PIM platforms (Akeneo, Pimcore, Plytix, Sales Layer, Salsify) that
+          model attribute families, variants, channels, locales, and assets for
+          omnichannel commerce.
+      - name: Nutrition And Ingredient Transparency
+        description: >-
+          Open and commercial APIs surfacing ingredients, allergens, nutrition
+          facts, Nutri-Score, NOVA classification, and additive data for food
+          and beverage products.
+      - name: Cosmetic And Personal Care Transparency
+        description: >-
+          INCI ingredient lists, allergen flags, and packaging data for beauty
+          and personal care products, exposed through Open Beauty Facts and
+          retailer feeds.
+      - name: Digital Shelf Analytics
+        description: >-
+          Monitoring product content quality, search rank, ratings, reviews,
+          pricing, and availability across retailer e-commerce sites and
+          marketplaces.
+  - type: UseCases
+    data:
+      - name: Product Onboarding To Retailers
+        description: >-
+          Brands publish master data once into a GDSN data pool and syndicate
+          to grocery, drug, mass, and club retailers with channel-specific
+          validation.
+      - name: Connected Packaging With 2D Barcodes
+        description: >-
+          Replacing 1D UPC barcodes with GS1 Digital Link QR codes to expose
+          brand experiences, regulatory data, supply chain provenance, and
+          recycling guidance from a single scan.
+      - name: Ingredient And Allergen Lookup
+        description: >-
+          Consumer apps querying Open Food Facts or Open Beauty Facts by
+          barcode to surface allergens, additives, certifications, and
+          nutritional scoring.
+      - name: PIM-Driven Marketplace Distribution
+        description: >-
+          Mid-market brands using PIM platforms to push consistent catalogs to
+          Amazon, Walmart, Target Plus, Shopify, and direct-to-consumer
+          channels.
+      - name: Regulatory Reporting And Recall Management
+        description: >-
+          Tracing recalled lots, batch codes, and serialized units through GS1
+          identifiers and supply chain APIs to support food safety, FDA,
+          USDA, and EU recall workflows.
+  - type: Integrations
+    data:
+      - name: GS1 Global Data Synchronization Network (GDSN)
+        description: >-
+          The international network of certified data pools enabling brands and
+          retailers to synchronize standardized product master data globally.
+      - name: Schema.org Product
+        description: >-
+          The web vocabulary used for embedding product, offer, and review
+          markup in e-commerce pages and consumed by search engines and
+          shopping platforms.
+      - name: Amazon Selling Partner API
+        description: >-
+          Marketplace API consumed by PIM platforms (Salsify, Plytix, Sales
+          Layer) to push catalogs, manage listings, and read orders.
+      - name: Shopify Admin API
+        description: >-
+          DTC commerce API integrated by brands and PIM platforms for product,
+          inventory, and order synchronization.
+      - name: SAP S/4HANA And Oracle NetSuite
+        description: >-
+          Enterprise resource planning systems where master product data
+          originates and is published outward through PIM and syndication
+          layers.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

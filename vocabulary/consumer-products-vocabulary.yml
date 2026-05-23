@@ -1,0 +1,300 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Consumer Products
+  description: >-
+    Vocabulary taxonomy for the consumer products / CPG ecosystem, covering
+    large CPG manufacturers, GS1 product identification, open product databases
+    (Open Food Facts, Open Beauty Facts), commercial syndication networks
+    (Salsify, Syndigo, 1WorldSync), and product information management
+    platforms (Akeneo, Pimcore, Plytix, Sales Layer).
+  created: "2026-05-23"
+  modified: "2026-05-23"
+
+operational:
+  apis:
+    - name: GS1 Digital Link
+      namespace: gs1dl
+      version: "1.4"
+      baseUrl: https://ref.gs1.org/standards/digital-link/
+      status: active
+    - name: Open Food Facts
+      namespace: off
+      version: "v2"
+      baseUrl: https://world.openfoodfacts.org/api/v2/
+      status: active
+    - name: Open Beauty Facts
+      namespace: obf
+      version: "v2"
+      baseUrl: https://world.openbeautyfacts.org/api/v2/
+      status: active
+    - name: Salsify
+      namespace: salsify
+      version: "v1"
+      baseUrl: https://app.salsify.com/api/
+      status: active
+    - name: Syndigo
+      namespace: syndigo
+      version: "v1"
+      baseUrl: https://api.syndigo.com/
+      status: active
+    - name: 1WorldSync
+      namespace: ows
+      version: "v1"
+      baseUrl: https://api.1worldsync.com/
+      status: active
+    - name: Akeneo
+      namespace: akeneo
+      version: "v1"
+      baseUrl: https://your-instance.cloud.akeneo.com/api/rest/v1/
+      status: active
+    - name: Pimcore
+      namespace: pimcore
+      version: "v1"
+      baseUrl: https://your-instance/pimcore/
+      status: active
+    - name: Plytix
+      namespace: plytix
+      version: "v1.1.0"
+      baseUrl: https://pim.plytix.com/api/v1.1.0/
+      status: active
+    - name: Sales Layer
+      namespace: saleslayer
+      version: "v1"
+      baseUrl: https://api.saleslayer.com/
+      status: active
+
+  resources:
+    - name: Consumer Product
+      description: A trade item sold to end consumers, identified by GTIN
+      api: gs1dl
+      actions: [create, read, update, list, syndicate]
+    - name: Product Identifier
+      description: A typed identifier (GTIN, UPC, EAN, ASIN, MPN) for a product
+      api: gs1dl
+      actions: [read, validate, resolve]
+    - name: Nutrition Facts
+      description: Nutrition panel for a food or beverage product
+      api: off
+      actions: [read, lookup]
+    - name: Ingredient
+      description: A declared ingredient or INCI component
+      api: off
+      actions: [read, lookup]
+    - name: Allergen
+      description: A declared allergen flag on a product
+      api: off
+      actions: [read, list]
+    - name: Brand
+      description: A marketing brand under a parent manufacturer
+      api: salsify
+      actions: [read, list]
+    - name: Category
+      description: A product classification node, often GS1 GPC aligned
+      api: akeneo
+      actions: [read, list]
+    - name: Channel
+      description: A syndication destination (retailer, marketplace, DTC)
+      api: salsify
+      actions: [read, list, syndicate]
+    - name: Digital Asset
+      description: Product imagery, video, document, or 3D asset
+      api: syndigo
+      actions: [create, read, list, transform]
+
+  actions:
+    - verb: create
+      description: Create a new product record
+      pattern: write
+    - verb: read
+      description: Retrieve a product, identifier, or attribute
+      pattern: read
+    - verb: update
+      description: Update product attributes or assets
+      pattern: write
+    - verb: list
+      description: List products, brands, channels, or attributes
+      pattern: read
+    - verb: lookup
+      description: Look up by barcode, GTIN, or external identifier
+      pattern: read
+    - verb: validate
+      description: Validate identifier format or attribute completeness
+      pattern: read
+    - verb: resolve
+      description: Resolve a GS1 Digital Link URI to a destination
+      pattern: read
+    - verb: syndicate
+      description: Publish product content to retailer or marketplace channels
+      pattern: write
+    - verb: transform
+      description: Generate channel-specific renditions of assets or attributes
+      pattern: write
+
+  schemas:
+    core:
+      - ConsumerProduct
+      - ProductIdentifier
+      - NutritionFacts
+    extended:
+      - Brand
+      - Category
+      - Channel
+      - DigitalAsset
+
+  parameters:
+    identifiers:
+      - name: gtin
+        description: Global Trade Item Number (8, 12, 13, or 14 digits)
+      - name: sku
+        description: Brand or retailer internal SKU
+      - name: gln
+        description: GS1 Global Location Number
+      - name: asin
+        description: Amazon Standard Identification Number
+    filters:
+      - name: brand
+        description: Filter by brand name
+      - name: category
+        description: Filter by product category or GPC code
+      - name: targetMarket
+        description: Filter by ISO 3166-1 alpha-2 target market
+      - name: lifecycleStatus
+        description: Filter by lifecycle stage
+
+  enums:
+    identifierTypes:
+      - GTIN
+      - UPC
+      - EAN
+      - ISBN
+      - GLN
+      - SSCC
+      - ASIN
+      - MPN
+      - SKU
+    lifecycleStatuses:
+      - PreLaunch
+      - Active
+      - Discontinued
+      - Recalled
+    nutriScores:
+      - A
+      - B
+      - C
+      - D
+      - E
+    novaGroups:
+      - 1
+      - 2
+      - 3
+      - 4
+    productCategories:
+      - Food And Beverage
+      - Beauty And Personal Care
+      - Household Care
+      - Health And Wellness
+      - Baby And Family Care
+      - Pet Care
+      - Apparel
+      - Electronics
+
+  authentication:
+    schemes:
+      - OAuth 2.0
+      - API Key
+      - Basic Auth
+    notes: >-
+      Open product databases (Open Food Facts, Open Beauty Facts) require no
+      auth for reads. Commercial PIM and syndication APIs (Salsify, Syndigo,
+      1WorldSync, Akeneo, Plytix, Sales Layer) typically use OAuth 2.0 or
+      API keys scoped to a tenant.
+
+capability:
+  workflows:
+    - name: Product Onboarding To Retailers
+      description: Publish master data into GDSN and syndicate to retailers
+      standards: [GS1 GDSN, GS1 GPC, GS1 Digital Link]
+      personas: [Brand Manager, Master Data Steward]
+    - name: Connected Packaging Resolution
+      description: Resolve a GS1 Digital Link QR code scan to channel-appropriate content
+      standards: [GS1 Digital Link]
+      personas: [Consumer, Brand Manager, Regulator]
+    - name: Ingredient And Allergen Lookup
+      description: Look up barcode to surface ingredients, allergens, and nutrition
+      standards: [GS1 GTIN, Open Food Facts]
+      personas: [Consumer, Dietitian, Regulator]
+    - name: Marketplace Catalog Distribution
+      description: Push PIM catalog content to Amazon, Walmart, Shopify channels
+      standards: [GS1 GTIN, Schema.org Product]
+      personas: [Brand Manager, E-commerce Operator]
+    - name: Recall And Lot Traceability
+      description: Trace recalled lots, batches, and serialized units across supply chain
+      standards: [GS1 GTIN, GS1 SSCC, EPCIS]
+      personas: [Quality And Regulatory Officer, Retailer]
+
+  personas:
+    - id: brand-manager
+      name: Brand Manager
+      description: Owns product positioning and content across the digital shelf
+      workflows: [Product Onboarding To Retailers, Connected Packaging Resolution, Marketplace Catalog Distribution]
+    - id: master-data-steward
+      name: Master Data Steward
+      description: Maintains product master data quality in PIM and GDSN systems
+      workflows: [Product Onboarding To Retailers]
+    - id: consumer
+      name: Consumer
+      description: End shopper scanning packaging or browsing the digital shelf
+      workflows: [Connected Packaging Resolution, Ingredient And Allergen Lookup]
+    - id: dietitian
+      name: Dietitian
+      description: Nutrition professional surfacing nutrition and ingredient data
+      workflows: [Ingredient And Allergen Lookup]
+    - id: ecommerce-operator
+      name: E-commerce Operator
+      description: Operates DTC and marketplace storefronts
+      workflows: [Marketplace Catalog Distribution]
+    - id: quality-officer
+      name: Quality And Regulatory Officer
+      description: Ensures product safety, labeling compliance, and recall readiness
+      workflows: [Recall And Lot Traceability]
+    - id: retailer
+      name: Retailer
+      description: Receives, validates, and lists product content from brands
+      workflows: [Product Onboarding To Retailers, Recall And Lot Traceability]
+    - id: regulator
+      name: Regulator
+      description: Agency (FDA, USDA, EFSA) consuming product transparency data
+      workflows: [Connected Packaging Resolution, Ingredient And Allergen Lookup]
+
+  domains:
+    - name: Product Identification
+      description: GS1 identifiers and barcode standards underpinning the ecosystem
+      standards: [GS1 GTIN, GS1 Digital Link, GS1 GPC]
+    - name: Master Data Syndication
+      description: GDSN-based syndication of validated product master data
+      standards: [GS1 GDSN]
+    - name: Product Information Management
+      description: PIM platforms that model attributes, variants, channels, and assets
+      standards: [Schema.org Product]
+    - name: Open Product Transparency
+      description: Community-maintained open databases for food and cosmetics
+      standards: [Open Food Facts API, Open Beauty Facts API]
+
+crossReference:
+  - resource: Consumer Product
+    operations: [create, read, update, list, syndicate]
+    standards: [GS1 Digital Link, Schema.org Product, GS1 GDSN]
+    personas: [Brand Manager, Master Data Steward, Retailer]
+  - resource: Product Identifier
+    operations: [read, validate, resolve]
+    standards: [GS1 GTIN, GS1 Digital Link]
+    personas: [Brand Manager, Consumer, Retailer]
+  - resource: Nutrition Facts
+    operations: [read, lookup]
+    standards: [Open Food Facts, FDA Nutrition Facts]
+    personas: [Consumer, Dietitian, Regulator]
+  - resource: Digital Asset
+    operations: [create, read, list, transform]
+    standards: [GS1 GDSN, Schema.org]
+    personas: [Brand Manager, E-commerce Operator]
