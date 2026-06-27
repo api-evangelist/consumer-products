@@ -82,10 +82,10 @@ apis:
     title: Open Food Facts API v2 Reference
   - type: GitHubOrganization
     url: https://github.com/openfoodfacts
-  - type: SDK
+  - type: SDKs
     url: https://github.com/openfoodfacts/openfoodfacts-python
     title: openfoodfacts-python
-  - type: SDK
+  - type: SDKs
     url: https://github.com/openfoodfacts/openfoodfacts-nodejs
     title: openfoodfacts-nodejs
   - type: License
@@ -500,15 +500,15 @@ common:
   url: >-
     https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/vocabulary/consumer-products-vocabulary.yml
   title: Consumer Products Vocabulary
-- type: Example
+- type: Examples
   url: >-
     https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/examples/consumer-product-food-example.json
   title: Consumer Product (Food) Example
-- type: Example
+- type: Examples
   url: >-
     https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/examples/consumer-product-beauty-example.json
   title: Consumer Product (Beauty) Example
-- type: Example
+- type: Examples
   url: >-
     https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/examples/consumer-product-household-example.json
   title: Consumer Product (Household) Example
