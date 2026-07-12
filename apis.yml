@@ -455,6 +455,8 @@ apis:
     url: https://docs.saleslayer.com/api/api-introduction
     title: Sales Layer API Reference
 common:
+- type: DomainSecurity
+  url: security/consumer-products-domain-security.yml
 - type: Website
   url: https://github.com/api-evangelist/consumer-products
 - type: GitHubOrganization
