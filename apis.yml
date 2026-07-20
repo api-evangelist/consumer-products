@@ -2,6 +2,7 @@ aid: consumer-products
 url: >-
   https://raw.githubusercontent.com/api-evangelist/consumer-products/refs/heads/main/apis.yml
 name: Consumer Products
+kind: topic
 type: Index
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
