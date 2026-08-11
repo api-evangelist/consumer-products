@@ -467,6 +467,8 @@ apis:
     url: https://docs.saleslayer.com/api/api-introduction
     title: Sales Layer API Reference
 common:
+- type: IssueTracker
+  url: https://github.com/gs1/GS1DigitalLinkToolkit.js/issues
 - type: DomainSecurity
   url: security/consumer-products-domain-security.yml
 - type: Website
