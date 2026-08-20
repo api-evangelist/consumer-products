@@ -22,6 +22,17 @@ tags:
 - Product Data
 - Retail
 - GTIN
+- Barcodes
+- Product Catalog
+- PIM
+- Syndication
+- Schema.org Product
+tags_raw:
+- Consumer Products
+- CPG
+- Product Data
+- Retail
+- GTIN
 - Barcode
 - Product Catalog
 - PIM
@@ -85,6 +96,12 @@ apis:
   - Food
   - Nutrition
   - Ingredients
+  - Barcodes
+  tags_raw:
+  - Open Data
+  - Food
+  - Nutrition
+  - Ingredients
   - Barcode
   properties:
   - type: Documentation
@@ -116,6 +133,12 @@ apis:
   - Beauty
   - Cosmetics
   - INCI
+  - Barcodes
+  tags_raw:
+  - Open Data
+  - Beauty
+  - Cosmetics
+  - INCI
   - Barcode
   properties:
   - type: Documentation
@@ -137,6 +160,13 @@ apis:
   humanURL: https://us.pg.com/brands/
   baseURL: https://us.pg.com/
   tags:
+  - CPG
+  - Beauty
+  - Grooming
+  - Healthcare
+  - Home Care
+  - Baby Care
+  tags_raw:
   - CPG
   - Beauty
   - Grooming
@@ -385,6 +415,11 @@ apis:
   baseURL: https://your-instance.cloud.akeneo.com/api/rest/v1/
   tags:
   - PIM
+  - Open-Source
+  - Product Cloud
+  - Catalog
+  tags_raw:
+  - PIM
   - Open Source
   - Product Cloud
   - Catalog
@@ -409,6 +444,12 @@ apis:
   humanURL: https://pimcore.com/
   baseURL: https://your-instance/pimcore/
   tags:
+  - PIM
+  - DAM
+  - DXP
+  - GraphQL
+  - Open-Source
+  tags_raw:
   - PIM
   - DAM
   - DXP
@@ -438,6 +479,11 @@ apis:
   baseURL: https://pim.plytix.com/api/v1.1.0/
   tags:
   - PIM
+  - Software-as-a-Service
+  - Mid-Market
+  - Syndication
+  tags_raw:
+  - PIM
   - SaaS
   - Mid-Market
   - Syndication
@@ -456,6 +502,11 @@ apis:
   humanURL: https://docs.saleslayer.com/
   baseURL: https://api.saleslayer.com/
   tags:
+  - PIM
+  - Software-as-a-Service
+  - Cloud
+  - Catalog
+  tags_raw:
   - PIM
   - SaaS
   - Cloud
