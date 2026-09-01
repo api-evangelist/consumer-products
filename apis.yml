@@ -33,7 +33,7 @@ tags:
 - Product Data
 - Retail
 - GTIN
-- Barcode
+- Barcodes
 - Product Catalog
 - PIM
 - Syndication
@@ -107,7 +107,7 @@ apis:
   - Food
   - Nutrition
   - Ingredients
-  - Barcode
+  - Barcodes
   tags_raw:
   - Open Data
   - Food
@@ -144,7 +144,7 @@ apis:
   - Beauty
   - Cosmetics
   - INCI
-  - Barcode
+  - Barcodes
   tags_raw:
   - Open Data
   - Beauty
