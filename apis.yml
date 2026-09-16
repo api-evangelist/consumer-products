@@ -35,7 +35,7 @@ tags:
 - GTIN
 - Barcodes
 - Product Catalog
-- PIM
+- Product Information Management
 - Syndication
 - Schema.org Product
 tags_raw:
@@ -358,6 +358,12 @@ apis:
   baseURL: https://app.salsify.com/api/
   tags:
   - PXM
+  - Product Information Management
+  - Syndication
+  - Digital Shelf
+  - Digital Asset Management
+  tags_raw:
+  - PXM
   - PIM
   - Syndication
   - Digital Shelf
@@ -380,6 +386,12 @@ apis:
   humanURL: https://www.syndigo.com/
   baseURL: https://api.syndigo.com/
   tags:
+  - MDM
+  - Product Information Management
+  - Syndication
+  - Content Experience
+  - Retail
+  tags_raw:
   - MDM
   - PIM
   - Syndication
@@ -425,7 +437,7 @@ apis:
   humanURL: https://api.akeneo.com/
   baseURL: https://your-instance.cloud.akeneo.com/api/rest/v1/
   tags:
-  - PIM
+  - Product Information Management
   - Open-Source
   - Product Cloud
   - Catalog
@@ -455,8 +467,8 @@ apis:
   humanURL: https://pimcore.com/
   baseURL: https://your-instance/pimcore/
   tags:
-  - PIM
-  - DAM
+  - Product Information Management
+  - Digital Asset Management
   - DXP
   - GraphQL
   - Open-Source
@@ -489,7 +501,7 @@ apis:
   humanURL: https://help.plytix.com/en/api
   baseURL: https://pim.plytix.com/api/v1.1.0/
   tags:
-  - PIM
+  - Product Information Management
   - Software-as-a-Service
   - Mid-Market
   - Syndication
@@ -513,7 +525,7 @@ apis:
   humanURL: https://docs.saleslayer.com/
   baseURL: https://api.saleslayer.com/
   tags:
-  - PIM
+  - Product Information Management
   - Software-as-a-Service
   - Cloud
   - Catalog
