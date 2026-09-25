@@ -12,6 +12,9 @@ artifacts:
   examples/consumer-product-household-example.json:
     method: unknown
     evidence: no authorship recorded
+  front-door-ai/2026-09-17.yml:
+    method: unknown
+    evidence: no authorship recorded
   graphql/consumer-products-graphql.md:
     method: unknown
     evidence: no authorship recorded
